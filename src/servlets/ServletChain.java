@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
+
+import chain.Weather;
+
 @WebServlet(name = "ServletChain", urlPatterns = { "/ServletChain" }, initParams = { @WebInitParam(name = "ressourceDir", value = "C:\\GIT\\workshopblockchain\\dossier") })
 public class ServletChain extends HttpServlet {
 
@@ -58,11 +62,20 @@ public class ServletChain extends HttpServlet {
 
 		if (action != null) {
 			if (action.equals("souscription")) {
-				// fait des trucs
-				
 				request.setAttribute("listeDe", "");
 				forwardTo = "index.jsp?action=souscription";
 				message = "Liste des ";
+			} else if (action.equals("meteo")) {
+				Double temperature = 0.0;
+				try {
+					temperature = Weather.getTemps("Montpellier");
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				request.setAttribute("meteo", temperature);
+				forwardTo = "index.jsp?action=meteo";
+				message = "Temps à montpellier";
 			} else {
 				forwardTo = "index.jsp?action=todo";
 				message = "La fonctionnalité pour le paramètre " + action + " est à implémenter !";
