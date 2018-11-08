@@ -1,9 +1,6 @@
 import java.security.Security;
 import java.util.ArrayList;
-//import java.util.Base64;
 import java.util.HashMap;
-//import com.google.gson.GsonBuilder;
-import java.util.Map;
 
 public class NoobChain {
 
@@ -60,7 +57,6 @@ public class NoobChain {
 		System.out.println("WalletB's balance is: " + walletB.getBalance());
 
 		isChainValid();
-
 	}
 
 	public static Boolean isChainValid() {
@@ -117,7 +113,6 @@ public class NoobChain {
 						System.out.println("#Referenced input Transaction(" + t + ") value is Invalid");
 						return false;
 					}
-
 					tempUTXOs.remove(input.transactionOutputId);
 				}
 
@@ -145,31 +140,5 @@ public class NoobChain {
 		newBlock.mineBlock(difficulty);
 		blockchain.add(newBlock);
 	}
+
 }
-
-/*
- * public static void main(String[] args) { //add our blocks to the blockchain
- * ArrayList: Security.addProvider(new
- * org.bouncycastle.jce.provider.BouncyCastleProvider()); //Setup Bouncey castle
- * as a Security Provider
- * 
- * //walletA = new Wallet(); //walletB = new Wallet();
- * 
- * //System.out.println("Private and public keys:");
- * //System.out.println(StringUtil.getStringFromKey(walletA.privateKey));
- * //System.out.println(StringUtil.getStringFromKey(walletA.publicKey));
- * 
- * createGenesis();
- * 
- * //Transaction transaction = new Transaction(walletA.publicKey,
- * walletB.publicKey, 5); //transaction.signature =
- * transaction.generateSignature(walletA.privateKey);
- * 
- * //System.out.println("Is signature verified:");
- * //System.out.println(transaction.verifiySignature());
- * 
- * }
- */
-
-//System.out.println("Trying to Mine block 1... ");
-//addBlock(new Block("Hi im the first block", "0"));
