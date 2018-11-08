@@ -64,7 +64,7 @@
     <label for="exampleInputPassword1">Ville</label>
     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre ville">
   </div>
-    <small id="emailHelp" class="form-text text-muted">Ces informations resteront confidentielles (oupa je sépa)</small>
+    <small id="emailHelp" class="form-text text-muted">Ces informations resteront confidentielles</small>
 	<input type="hidden" name="action" value="souscription"/>
   <button type="submit" class="btn btn-primary">Souscrire à un smart contrat</button>
 </form>
