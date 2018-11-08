@@ -64,13 +64,22 @@ public class ServletChain extends HttpServlet {
 			if (action.equals("souscription")) {
 				request.setAttribute("listeDe", "");
 				forwardTo = "index.jsp?action=souscription";
-				message = "Liste des ";
+				message = "Bravo";
+			} else if (action.equals("rain")) {
+				boolean pluie = false;
+				try {
+				pluie = Weather.getRain("Montpellier");
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+				request.setAttribute("pluie", pluie);
+				forwardTo = "index.jsp?action=pluie";
+				message = "pluie à montpellier";
 			} else if (action.equals("meteo")) {
 				Double temperature = 0.0;
 				try {
 					temperature = Weather.getTemps("Montpellier");
 				} catch (JSONException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				request.setAttribute("meteo", temperature);
