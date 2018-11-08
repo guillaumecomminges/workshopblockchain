@@ -51,7 +51,7 @@
           <h1 class="jumbotron-heading">Assurez vos champs !</h1>
           <p class="lead text-muted">Une solution originale et innovante, AXA vous propose une nouvelle manière de vous assurer !</p>
           
-          <form>
+          <form methode="POST" action="/">
   <div class="form-group">
     <label for="exampleInputEmail1">Nom</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre nom">
