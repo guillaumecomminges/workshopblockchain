@@ -1,6 +1,11 @@
 package chain;
+
+import com.google.gson.Gson;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import org.apache.commons.io.FileUtils;
 
 public class Block {
 
@@ -52,5 +57,12 @@ public class Block {
 		System.out.println("Transaction Successfully added to Block");
 		return true;
 	}
+        
+        public void saveblock() throws IOException {
+            Gson g = new Gson(); 
+            String jsonstring = g.toJson(this);
+            File file = new File("blocks/"+this.hash+".txt");
+            FileUtils.writeStringToFile(file, jsonstring, "UTF-8");
+        }
 
 }
