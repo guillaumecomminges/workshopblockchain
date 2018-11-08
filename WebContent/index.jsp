@@ -51,7 +51,7 @@
           <h1 class="jumbotron-heading">Assurez vos champs !</h1>
           <p class="lead text-muted">Une solution originale et innovante, AXA vous propose une nouvelle manière de vous assurer !</p>
           
-          <form methode="POST" action="/">
+          <form method="POST" action="ServletChain">
   <div class="form-group">
     <label for="exampleInputEmail1">Nom</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre nom">
@@ -65,7 +65,7 @@
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre ville">
   </div>
     <small id="emailHelp" class="form-text text-muted">Ces informations resteront confidentielles (oupa je sépa)</small>
-
+	<input type="hidden" name="action" value="souscription"/>
   <button type="submit" class="btn btn-primary">Souscrire à un smart contrat</button>
 </form>
           

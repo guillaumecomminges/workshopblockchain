@@ -1,8 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.Collection;
-import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -14,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "ServletChain", urlPatterns = { "/ServletChain" }, initParams = { @WebInitParam(name = "ressourceDir", value = "C:\\GIT\\workshopblockchain\\dossier") })
 public class ServletChain extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
@@ -59,7 +59,7 @@ public class ServletChain extends HttpServlet {
 		if (action != null) {
 			if (action.equals("souscription")) {
 				// fait des trucs
-
+				
 				request.setAttribute("listeDe", "");
 				forwardTo = "index.jsp?action=souscription";
 				message = "Liste des ";
@@ -67,9 +67,7 @@ public class ServletChain extends HttpServlet {
 				forwardTo = "index.jsp?action=todo";
 				message = "La fonctionnalité pour le paramètre " + action + " est à implémenter !";
 			}
-
 		}
-
 		RequestDispatcher dp = request.getRequestDispatcher(forwardTo + "&message=" + message);
 		dp.forward(request, response);
 	}
@@ -82,4 +80,5 @@ public class ServletChain extends HttpServlet {
 	public String getServletInfo() {
 		return "Short description";
 	}
+
 }

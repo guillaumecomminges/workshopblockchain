@@ -6,7 +6,6 @@
 package chain;
 
 import java.io.IOException;
-import static java.lang.String.format;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,33 +14,29 @@ import org.json.*;
 
 public class Weather {
 
-    
-    public static boolean getRain(String city) throws MalformedURLException, IOException, JSONException{
+	public static boolean getRain(String city) throws MalformedURLException, IOException, JSONException {
 
-        String inline = "";
+		String inline = "";
 
-        
-        URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q="+city+",fr&appid=bfd5acdf0b57e8494afe1bc9295a4037");
+		URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + city + ",fr&appid=bfd5acdf0b57e8494afe1bc9295a4037");
 
-        
-       
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-        conn.setRequestMethod("GET");
+		conn.setRequestMethod("GET");
 
-        conn.connect();
+		conn.connect();
 
-        int responsecode = conn.getResponseCode();
+		//int responsecode = conn.getResponseCode();
 
-        Scanner sc = new Scanner(url.openStream());
-        while (sc.hasNext()) {
-            inline += sc.nextLine();
-        }
-        
-        JSONObject json = new JSONObject(inline);
-        sc.close();
-        
-        return json.getJSONArray("weather").getJSONObject(0).getString("main").equals("Rain");
+		Scanner sc = new Scanner(url.openStream());
+		while (sc.hasNext()) {
+			inline += sc.nextLine();
+		}
 
-    }
- }   
+		JSONObject json = new JSONObject(inline);
+		sc.close();
+
+		return json.getJSONArray("weather").getJSONObject(0).getString("main").equals("Rain");
+	}
+
+}
