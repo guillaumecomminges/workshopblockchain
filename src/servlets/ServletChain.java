@@ -18,7 +18,7 @@ public class ServletChain extends HttpServlet {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
-		System.out.println("Dans le init ! Appelé une seule fois lors de la première invocation");
+		System.out.println("Dans le init ! Appelï¿½ une seule fois lors de la premiï¿½re invocation");
 
 		// Server.init(config.getInitParameter("ressourceDir"));
 	}
@@ -37,7 +37,7 @@ public class ServletChain extends HttpServlet {
 		String message = "";
 
 		forwardTo = "index.jsp?action=todo";
-		message = "La fonctionnalité pour le paramètre " + action + " est à implémenter !";
+		message = "La fonctionnalitï¿½ pour le paramï¿½tre " + action + " est ï¿½ implï¿½menter !";
 
 		RequestDispatcher dp = request.getRequestDispatcher(forwardTo + "&message=" + message);
 		dp.forward(request, response);
@@ -58,14 +58,15 @@ public class ServletChain extends HttpServlet {
 
 		if (action != null) {
 			if (action.equals("souscription")) {
-				// fait des trucs
-				
+				String assure = request.getParameter("numeroassure");
+                                String ville = request.getParameter("ville");
+
 				request.setAttribute("listeDe", "");
 				forwardTo = "index.jsp?action=souscription";
 				message = "Liste des ";
 			} else {
 				forwardTo = "index.jsp?action=todo";
-				message = "La fonctionnalité pour le paramètre " + action + " est à implémenter !";
+				message = "La fonctionnalitï¿½ pour le paramï¿½tre " + action + " est ï¿½ implï¿½menter !";
 			}
 		}
 		RequestDispatcher dp = request.getRequestDispatcher(forwardTo + "&message=" + message);
