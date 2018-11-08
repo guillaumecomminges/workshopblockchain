@@ -54,15 +54,15 @@
           <form method="POST" action="ServletChain">
   <div class="form-group">
     <label for="exampleInputEmail1">Nom</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre nom">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre nom">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Prénom</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre prénom">
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre prénom">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Ville</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre ville">
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre ville">
   </div>
     <small id="emailHelp" class="form-text text-muted">Ces informations resteront confidentielles (oupa je sépa)</small>
 	<input type="hidden" name="action" value="souscription"/>
